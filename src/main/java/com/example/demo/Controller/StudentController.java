@@ -76,5 +76,16 @@ public class StudentController {
 	  }
 	
 	// method to display saved students form
+	   
+	   
+	   
+	   @GetMapping("/viewstudents")
+	   public String showStudents(Model model) {
+		   
+		   List<StudentEntity> studentsData = repo.findAll();
+		   model.addAttribute("data", studentsData);
+		   
+		   return "data";
+	   }
 	
 }
